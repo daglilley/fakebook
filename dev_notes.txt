@@ -1,0 +1,93 @@
+integration tests to check each page loading properly
+unit tests to check associations properly set up
+
+1, use postgresql
+2. user must sign-in to see all but signup page
+3. sign-in with devise gem
+
+friend requests
+posts with likes and comments
+timeline
+profile
+omniauth signin
+sign-up mail with mailer
+
+------------------------
+
+# Data Structures
+
+Session
+  >> Devise
+
+User
+  name:     string
+  email:    string
+
+  has_many :friend_requests
+  has_many :users, through: :friends
+  has_many :posts
+  has_many :comments
+  has_many :likes
+  has_one  :profile
+  
+Friend Requests
+  belongs_to :sender, class_name: 'User'
+  belongs_to :receiver, class_name: 'User'
+  
+Friendship
+  belongs_to :user
+  belongs_to :friend, class_name: 'User'
+  
+Post
+  body:  text
+  
+  belongs_to :author, class_name: 'User'
+  has_many   :comments
+  has_many   :likes, as: :likeable
+  
+Comment
+  body:   text
+  
+  belongs_to :author, class_name: 'User'
+  belongs_to :post
+  has_many   :likes, as: :likeable
+
+Like
+  belongs_to :likeable, polymorphic: true
+  belongs_to :liker, class_name: 'User'
+
+Profile
+  photo: /link/ or image
+  
+  belongs_to :user
+  
+-----------------------------
+
+NEXT:
+
+Make account
+Sign in
+Edit sign in page
+
+Show users
+Show buttons by users?
+
+Allow Users to Send Friend Requests
+-- able to sign in
+-- able to see users
+-- able to see send friend request button
+Turn Friend Requests into Friendships
+-- friend request button shows if friends
+
+Create Posts
+Associate Users with Posts
+
+
+create Posts
+Create integration tests for Users owning Posts
+make Users own Posts
+
+
+
+/users/sign_up
+/users/sign_in
