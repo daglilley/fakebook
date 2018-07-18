@@ -53,10 +53,16 @@ $ rails new fakebook --database=postgresql
   
 ------------------------
 
-# Data Structures
+USERS
 
-Session
-  >> Devise
+signin
+see users
+send friend requests
+accept requests to become friends
+friend request notifications show in navbar
+
+
+# Data Structures
 
 User
   name:     string
@@ -70,7 +76,7 @@ User
   has_one  :profile
   
 Friend Requests
-  belongs_to :sender, class_name: 'User'
+  belongs_to :sender,  class_name: 'User'
   belongs_to :receiver, class_name: 'User'
   
 Friendship
