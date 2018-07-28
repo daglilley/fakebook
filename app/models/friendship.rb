@@ -6,4 +6,15 @@ class Friendship < ApplicationRecord
   validates :friender, presence: true
   validates :friended, presence: true
   
+  #after_create: :mirror
+  # --> after confirming?
+  
+  def mirror
+    unless Friendship.find_by(friender: self.friended,
+                              friended: self.friender)
+      Friendship.create(friender: self.friended,
+                        friended: self.friender)
+  end
+  
+  
 end

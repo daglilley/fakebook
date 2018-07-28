@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class FriendshipTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  
+  def setup
+    @marth_alm = Friendship.new(friender: users(:marth),
+                                friended: users(:alm))
+  end
+  
 end

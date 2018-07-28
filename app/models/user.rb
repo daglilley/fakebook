@@ -17,6 +17,31 @@ class User < ApplicationRecord
   has_many :frienders, through: :frienderships,
                        source:  :friender
   
+  def request_friendship(user)
+  end
   
+  def accept_friendship(user)
+  end
+  
+  def retract_friendship(user)
+  end
+  
+  def reject_friendship(user)
+  end
+  
+  def delete_friendship(user)
+  end
+  
+  def friended?(user)
+  end
+  
+  def friender?(user)
+  end
+  
+  def friends?(user)
+  end
+  
+  def friends
+  end
   
 end

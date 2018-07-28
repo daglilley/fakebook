@@ -53,7 +53,7 @@ $ rails new fakebook --database=postgresql
   check heroku compatibility
 
 $ rails g devise users
-$ rails g model Friendship sender:references receiver:references
+$ rails g model Friendship sender:references receiver:references accepted:boolean
 
 
 USERS
