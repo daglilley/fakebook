@@ -42,6 +42,7 @@ Some setup you must do manually if you haven't yet:
        rails g devise:views
 
 ------------------------
+------------------------
 
 
 SETUP
@@ -50,8 +51,10 @@ $ rails new fakebook --database=postgresql
   setup gemfile
   make test controller
   check heroku compatibility
-  
-------------------------
+
+$ rails g devise users
+$ rails g model Friendship sender:references receiver:references
+
 
 USERS
 
