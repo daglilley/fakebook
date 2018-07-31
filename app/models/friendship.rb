@@ -14,6 +14,7 @@ class Friendship < ApplicationRecord
                               friended: self.friender)
       Friendship.create(friender: self.friended,
                         friended: self.friender)
+    end
   end
   
   

@@ -4,7 +4,10 @@ class User < ApplicationRecord
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-         
+
+  validates :name,  presence: true, length: { maximum: 64 }
+  validates :email, presence: true, length: { maximum: 255 }
+
   has_many :friendedships, class_name:  'Friendship',
                            foreign_key: :friender_id,
                            dependent:   :destroy
