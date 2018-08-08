@@ -54,6 +54,9 @@ $ rails new fakebook --database=postgresql
 
 $ rails g devise users
 $ rails g model Friendship sender:references receiver:references accepted:boolean
+  implement model dependencies
+$ rails g devise:views
+$ rails g controller Users show index
 
 
 USERS
