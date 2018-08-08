@@ -3,7 +3,7 @@ class Friendship < ApplicationRecord
   belongs_to :friender, class_name: 'User'
   belongs_to :friended, class_name: 'User'
   
-  validates :friender, presence: true
+  validates :friender, presence: true, uniqueness: { scope: :friended }
   validates :friended, presence: true
   
   #after_create: :mirror
